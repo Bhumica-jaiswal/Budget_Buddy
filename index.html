@@ -15,7 +15,7 @@
 
 <body>
   <h1><i data-lucide="wallet" class="lucide title"></i> Budget Buddy</h1>
-  <p>Track, Save, Thrive—It’s That Simple!</p>
+  <p>Track, Save, Thrive—It's That Simple!</p>
   <div class="container">
     <h4>Your Balance</h4>
     <h1 id="balance">&#8377;0.00</h1>
@@ -55,14 +55,42 @@
         <option value="all">All</option>
         <option value="income">Income</option>
         <option value="expense">Expense</option>
+        <option value="today">Today</option>
+        <option value="this-week">This Week</option>
+        <option value="this-month">This Month</option>
       </select>
+      <button id="sort-btn" class="sort-btn">
+        <i data-lucide="arrow-down" class="lucide"></i> Sort by Date
+      </button>
     </div>
     <ul id="list" class="list">
-      <li class="minus">
-        Cash<span>-&#8377;400</span><button class="delete-btn">x</button>
-      </li>
+      <!-- Transactions will be added here dynamically -->
     </ul>
   </div>
+  
+  <div class="dashboard-container">
+    <div class="dashboard-card">
+      <h3><i data-lucide="bar-chart" class="lucide"></i> Spending Overview</h3>
+      <div class="stats-container">
+        <div class="stat-item">
+          <span class="stat-label">This Month</span>
+          <span id="month-expense" class="stat-value">&#8377;0.00</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-label">This Week</span>
+          <span id="week-expense" class="stat-value">&#8377;0.00</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-label">Today</span>
+          <span id="today-expense" class="stat-value">&#8377;0.00</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <footer>
+    <p>Budget Buddy © <span id="current-year"></span> | Last updated: <span id="last-update"></span></p>
+  </footer>
 </body>
 
 </html>
